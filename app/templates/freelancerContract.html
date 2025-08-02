@@ -1,24 +1,25 @@
+<!-- app/templates/contrato_freelance.html -->
+
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Contrato Freelance</title>
+  <meta charset="UTF-8">
+  <title>Contrato Freelance</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 2em; }
+  </style>
 </head>
 <body>
-    <h2>Generar Contrato Freelance</h2>
-    <form method="post" action="/contracts/freelancer">
-        <label for="clientName">Nombre del cliente:</label><br>
-        <input type="text" id="clientName" name="clientName" required><br><br>
+  <h1>Contrato de Servicios Freelance</h1>
+  <p>Entre <strong>{{ client_name }}</strong>, DNI {{ client_document }}, y <strong>{{ employee_name }}</strong>, DNI {{ employee_document }}, se acuerda lo siguiente:</p>
 
-        <label for="jobDescription">Descripción del trabajo:</label><br>
-        <textarea id="jobDescription" name="jobDescription" required></textarea><br><br>
+  <p><strong>Descripción del Proyecto:</strong> {{ job_description }}</p>
+  <p><strong>Honorarios:</strong> {{ price }}</p>
+  <p><strong>Inicio:</strong> {{ start_date }} | <strong>Fin:</strong> {{ due_date }}</p>
 
-        <label for="date">Fecha estimada de Entrega:</label><br>
-        <input type="text" id="date" name="date" required><br><br>
+  <p>Ambas partes aceptan los términos y condiciones aquí descritos.</p>
 
-        <label for="price">Precio acordado:</label><br>
-        <input type="text" id="price" name="price" required><br><br>
-
-        <button type="submit">Generar contrato</button>
-    </form>
+  <p style="margin-top: 4em;">Firma del Cliente: ___________________________</p>
+  <p>Firma del Freelancer: _________________________</p>
 </body>
 </html>
